@@ -1,0 +1,330 @@
+/* Core Styling & Modern Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e24 0%, #2a2a36 100%);
+  color: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #ffcb05;
+  text-shadow: 2px 2px #3b4cca;
+  margin-bottom: 5px;
+}
+
+header p {
+  color: #a0a0b0;
+  font-size: 0.95rem;
+}
+
+/* Search Form */
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  background-color: #121216;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #ffcb05;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background-color: #3b4cca;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-box button:hover {
+  background-color: #2a3aa8;
+}
+
+/* Quick Search Buttons */
+.quick-search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #a0a0b0;
+}
+
+.btn-quick {
+  background-color: #2c2c38;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  padding: 6px 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-quick:hover {
+  background-color: #ffcb05;
+  color: #121216;
+  border-color: #ffcb05;
+  font-weight: bold;
+}
+
+.btn-random {
+  background-color: #382c48;
+}
+
+/* Status / Alert Messages */
+.status-message {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status-message.loading {
+  background-color: #1a2a3a;
+  color: #64b5f6;
+  border: 1px solid #1e88e5;
+}
+
+.status-message.error {
+  background-color: #3a1a1a;
+  color: #e57373;
+  border: 1px solid #e53935;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Trading Card Interface */
+.pokemon-card {
+  background-color: #252530;
+  border-radius: 16px;
+  padding: 20px;
+  border: 4px solid #444;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-header h2 {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.poke-id {
+  color: #888;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn-shiny {
+  background: #333;
+  border: 1px solid #666;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.btn-shiny.active {
+  background: #ffcb05;
+  color: #000;
+  border-color: #ffcb05;
+  font-weight: bold;
+}
+
+/* Card Image Frame */
+.card-image-wrapper {
+  background: radial-gradient(circle, #3a3a4a 0%, #1a1a24 100%);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  border: 2px solid #333;
+  margin-bottom: 16px;
+}
+
+.card-image-wrapper img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+}
+
+/* Dynamic Types */
+.types-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.type-badge {
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Content Sections */
+.card-section {
+  background: #1c1c24;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.card-section h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.physical-stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.abilities-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.abilities-list li {
+  background: #2a2a38;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+/* Stats Progress Bars Grid */
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 70px 35px 1fr;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.stat-name {
+  text-transform: uppercase;
+  color: #aaa;
+  font-weight: 600;
+}
+
+.stat-num {
+  text-align: right;
+  padding-right: 8px;
+  font-weight: bold;
+}
+
+.stat-bar-bg {
+  background: #2d2d3a;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: #ffcb05;
+  border-radius: 4px;
+  transition: width 0.4s ease-out;
+}
+
+/* Pokémon Type Theming Colors */
+.type-fire     { background-color: #EE8130; }
+.type-water    { background-color: #6390F0; }
+.type-grass    { background-color: #7AC74C; }
+.type-electric { background-color: #F7D02C; color: #000; text-shadow: none; }
+.type-ice      { background-color: #96D9D6; color: #000; text-shadow: none; }
+.type-fighting { background-color: #C22E28; }
+.type-poison   { background-color: #A33EA1; }
+.type-ground   { background-color: #E2BF65; color: #000; text-shadow: none; }
+.type-flying   { background-color: #A98FF3; }
+.type-psychic  { background-color: #F95587; }
+.type-bug      { background-color: #A6B91A; }
+.type-rock     { background-color: #B6A136; }
+.type-ghost    { background-color: #735797; }
+.type-dragon   { background-color: #6F35FC; }
+.type-dark     { background-color: #705746; }
+.type-steel    { background-color: #B7B7CE; color: #000; text-shadow: none; }
+.type-fairy    { background-color: #D685AD; }
+.type-normal   { background-color: #A8A77A; }

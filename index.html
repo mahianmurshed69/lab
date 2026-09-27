@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex API Card Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Pokédex Explorer</h1>
+      <p>Search for any Pokémon by name or ID</p>
+    </header>
+
+    <main>
+      <!-- Search Form -->
+      <form id="search-form" class="search-box">
+        <input 
+          type="text" 
+          id="pokemon-input" 
+          placeholder="Enter Pokémon name or ID..." 
+          required 
+          autocomplete="off"
+        >
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+
+      <!-- Quick Search Presets -->
+      <div class="quick-search">
+        <span>Quick Picks:</span>
+        <button type="button" class="btn-quick" data-name="pikachu">Pikachu</button>
+        <button type="button" class="btn-quick" data-name="charizard">Charizard</button>
+        <button type="button" class="btn-quick" data-name="bulbasaur">Bulbasaur</button>
+        <button type="button" id="btn-random" class="btn-quick btn-random">🎲 Random</button>
+      </div>
+
+      <!-- Feedback Area: Loading & Error Messages -->
+      <div id="status-message" class="status-message hidden"></div>
+
+      <!-- Pokémon Card Display Area -->
+      <div id="card-container" class="card-container hidden">
+        <div id="pokemon-card" class="pokemon-card">
+          <!-- Header: Name, ID, Shiny Toggle -->
+          <div class="card-header">
+            <div>
+              <h2 id="poke-name">--</h2>
+              <span id="poke-id" class="poke-id">#000</span>
+            </div>
+            <button id="shiny-toggle-btn" class="btn-shiny" title="Toggle Shiny Sprite">✨ Shiny</button>
+          </div>
+
+          <!-- Media: Image Presentation -->
+          <div class="card-image-wrapper">
+            <img id="poke-image" src="" alt="Pokémon Artwork">
+          </div>
+
+          <!-- Type Badges -->
+          <div id="poke-types" class="types-container"></div>
+
+          <!-- Physical Characteristics -->
+          <div class="card-section physical-stats">
+            <div class="stat-box">
+              <span class="stat-label">Height</span>
+              <span id="poke-height" class="stat-value">-- m</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label">Weight</span>
+              <span id="poke-weight" class="stat-value">-- kg</span>
+            </div>
+          </div>
+
+          <!-- Abilities -->
+          <div class="card-section">
+            <h3>Abilities</h3>
+            <ul id="poke-abilities" class="abilities-list"></ul>
+          </div>
+
+          <!-- Base Stats Grid -->
+          <div class="card-section">
+            <h3>Base Stats</h3>
+            <div id="poke-stats" class="stats-grid"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
